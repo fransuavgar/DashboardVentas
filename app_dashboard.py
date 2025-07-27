@@ -8,6 +8,7 @@ import plotly.express as px
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
+import os 
 
 # 📥 Cargar datos limpios
 try:
@@ -130,4 +131,5 @@ def actualizar_contenido(pestana, fecha_inicio, fecha_fin, categoria):
 
 # 🚀 Ejecutar servidor local
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))  # Render asigna el puerto dinámicamente
+    app.run_server(host="0.0.0.0", port=port, debug=False)
