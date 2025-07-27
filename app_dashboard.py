@@ -11,7 +11,7 @@ from dash.dependencies import Input, Output
 
 # 📥 Cargar datos limpios
 try:
-    df = pd.read_csv("C:\\Users\\FranciscoSuavitaGarc\\Documents\\INCCATERCERCUATRIMESTRE\\P6-AnalisisyVerificaciondeAlgoritmos\\Semana12\\TrabajoEntrega\\ProyectoVentas\\Datos_Ventas_Tienda_Limpio.csv")
+    df = pd.read_csv("Datos_Ventas_Tienda_Limpio.csv")
     df = df.rename(columns={'Total Venta': 'Total_Venta'})  # Renombrar para consistencia
     df = df.loc[:, ~df.columns.duplicated()]  # Eliminar columnas duplicadas
     df['Fecha'] = pd.to_datetime(df['Fecha'], errors='coerce')
